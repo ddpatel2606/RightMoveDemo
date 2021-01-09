@@ -38,10 +38,10 @@ Properties Listing Api
 ```MainActivity : Light Mode```
 
 
-<img src="images/1.png" width="350"/>
+<img src="image/1.png" width="350"/>
 
 
 ```MainActivity : Night Mode```
 
 
-<img src="images/2.png" width="350"/>
+<img src="image/2.png" width="350"/>
