@@ -14,12 +14,12 @@ import java.net.UnknownHostException
 import javax.inject.Inject
 
 /**
- *  MainViewRepository class to call Main pokemon API.
+ *  MainViewRepository class to call Main property API.
  */
 class MainViewRepository @Inject constructor() : Repository
 {
 
-    // Pokemon listing API
+    // property listing API
     @WorkerThread
     suspend fun propertyApiCall(apiInterface : ApiInterface,
                                 onSuccess: () -> Unit,

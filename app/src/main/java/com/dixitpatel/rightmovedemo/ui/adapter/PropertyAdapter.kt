@@ -8,29 +8,28 @@ import com.dixitpatel.rightmovedemo.R
 import com.dixitpatel.rightmovedemo.databinding.RowItemAllBinding
 import com.dixitpatel.rightmovedemo.model.Property
 
-class PropertyAdapter : RecyclerView.Adapter<PropertyAdapter.PokemonViewHolder>() {
+/**
+ *  Adapter class : Display data of Property.
+ */
+class PropertyAdapter : RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder>() {
 
   private val items: MutableList<Property> = mutableListOf()
 
-  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
+  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PropertyViewHolder {
     val inflater = LayoutInflater.from(parent.context)
     val binding =
       DataBindingUtil.inflate<RowItemAllBinding>(inflater, R.layout.row_item_all, parent, false)
-    return PokemonViewHolder(binding).apply {
-      binding.root.setOnClickListener {
-
-      }
-    }
+    return PropertyViewHolder(binding)
   }
 
-  fun setPropertyList(pokemonList: List<Property>) {
+  fun setPropertyList(propertyList: List<Property>) {
     val previousItemSize = items.size
     items.clear()
-    items.addAll(pokemonList)
-    notifyItemRangeChanged(previousItemSize, pokemonList.size)
+    items.addAll(propertyList)
+    notifyItemRangeChanged(previousItemSize, propertyList.size)
   }
 
-  override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
+  override fun onBindViewHolder(holder: PropertyViewHolder, position: Int) {
     holder.binding.apply {
       property = items[position]
       executePendingBindings()
@@ -39,5 +38,5 @@ class PropertyAdapter : RecyclerView.Adapter<PropertyAdapter.PokemonViewHolder>(
 
   override fun getItemCount() = items.size
 
-  class PokemonViewHolder(val binding: RowItemAllBinding) : RecyclerView.ViewHolder(binding.root)
+  class PropertyViewHolder(val binding: RowItemAllBinding) : RecyclerView.ViewHolder(binding.root)
 }

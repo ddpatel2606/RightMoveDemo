@@ -12,12 +12,17 @@ import com.dixitpatel.rightmovedemo.utils.Alerts
 import java.text.DecimalFormat
 import javax.inject.Inject
 
+/**
+ * MainActivity : Display the Property list and calculate Average of All Price.
+ */
 class MainActivity : BaseActivity<MainActivityViewModel?>()
 {
+    // bind as Lazy : when binding property call then It it will be Initialized.
     private val binding: ActivityMainBinding by binding(R.layout.activity_main)
 
     @Inject
     lateinit var model: MainActivityViewModel
+
 
     override fun getViewModel(): MainActivityViewModel {
         return model
@@ -42,7 +47,8 @@ class MainActivity : BaseActivity<MainActivityViewModel?>()
             vm = model
         }
 
-        model.pokemonListLiveData.observe(this, Observer {
+        // Once Property list receives from server observed here and calculate formatted average.
+        model.propertyListLiveData.observe(this, Observer {
             model.calculateAverage.value =
                 "Average : ${DecimalFormat("####0.00").format(it . map { it -> it!!.price }.average())}"
         })

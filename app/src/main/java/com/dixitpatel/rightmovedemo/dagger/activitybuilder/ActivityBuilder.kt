@@ -15,8 +15,5 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = [MainActivityModule::class])
     abstract fun contributeMainActivity(): MainActivity?
-//
-//    @ContributesAndroidInjector(modules = [DetailViewActivityModule::class])
-//    abstract fun contributeDetailActivity(): DetailViewActivity?
 
 }

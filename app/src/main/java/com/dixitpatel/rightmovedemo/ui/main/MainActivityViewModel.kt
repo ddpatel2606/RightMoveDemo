@@ -6,20 +6,17 @@ import com.dixitpatel.rightmovedemo.R
 import com.dixitpatel.rightmovedemo.application.MyApplication
 import com.dixitpatel.rightmovedemo.model.Property
 import com.dixitpatel.rightmovedemo.network.ApiInterface
-import com.dixitpatel.rightmovedemo.network.AuthStatus
 import com.dixitpatel.rightmovedemo.repository.MainViewRepository
 import com.dixitpatel.rightmovedemo.ui.base.LiveCoroutinesViewModel
-import com.dixitpatel.rightmovedemo.utils.Utils
 import timber.log.Timber
 import javax.inject.Inject
-import kotlin.coroutines.coroutineContext
 
 /**
  *  Main Activity ViewModel : ViewModel
  */
 class MainActivityViewModel @Inject constructor(val apiInterface: ApiInterface, val mainViewRepository: MainViewRepository) : LiveCoroutinesViewModel()
 {
-    var pokemonListLiveData: LiveData<List<Property?>>
+    var propertyListLiveData: LiveData<List<Property?>>
 
     var calculateAverage = MutableLiveData("")
 
@@ -33,7 +30,7 @@ class MainActivityViewModel @Inject constructor(val apiInterface: ApiInterface, 
     {
         Timber.d("init MainViewModel")
         isLoading.set(true)
-            pokemonListLiveData = launchOnViewModelScope {
+            propertyListLiveData = launchOnViewModelScope {
                 this.mainViewRepository.propertyApiCall(apiInterface = apiInterface,
                     onSuccess = {
                         isLoading.set(false)

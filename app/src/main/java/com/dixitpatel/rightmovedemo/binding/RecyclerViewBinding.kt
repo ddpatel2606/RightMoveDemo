@@ -3,10 +3,13 @@ package com.dixitpatel.rightmovedemo.binding
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.dixitpatel.rightmovedemo.extension.recyclerViewAnimate
 import com.dixitpatel.rightmovedemo.model.Property
 import com.dixitpatel.rightmovedemo.ui.adapter.PropertyAdapter
 
-
+/**
+ *  This is RecyclerView Binding class where adapter and Property list bind directly from layout.
+ */
 object RecyclerViewBinding {
 
   @JvmStatic
@@ -22,13 +25,14 @@ object RecyclerViewBinding {
        */
       stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
     }
+    view.recyclerViewAnimate()
   }
 
 
   @JvmStatic
   @BindingAdapter("adapterPropertyList")
-  fun bindAdapterPropertyList(view: RecyclerView, pokemonList: List<Property>?) {
-    pokemonList?.let{ itemList ->
+  fun bindAdapterPropertyList(view: RecyclerView, propertyList: List<Property>?) {
+    propertyList?.let{ itemList ->
       view.adapter?.let { adapter ->
         (adapter as PropertyAdapter).setPropertyList(itemList)
       }

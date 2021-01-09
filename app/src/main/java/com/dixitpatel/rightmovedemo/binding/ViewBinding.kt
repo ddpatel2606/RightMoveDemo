@@ -12,6 +12,9 @@ import com.dixitpatel.rightmovedemo.utils.CircularProgressView
 import com.squareup.picasso.Picasso
 import timber.log.Timber
 
+/**
+ *  This is View Binding class where Toast, Image view and Progress visibility update called from layout.
+ */
 object ViewBinding {
 
   @JvmStatic

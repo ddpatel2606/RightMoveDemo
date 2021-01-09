@@ -66,7 +66,7 @@
                 android:scrollbarThumbVertical="@drawable/scrollbar"
                 android:scrollbars="horizontal"
                 app:adapter="@{adapter}"
-                app:adapterPropertyList="@{vm.pokemonListLiveData}"
+                app:adapterPropertyList="@{vm.propertyListLiveData}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

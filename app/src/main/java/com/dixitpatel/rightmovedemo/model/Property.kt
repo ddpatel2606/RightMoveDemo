@@ -48,19 +48,22 @@ data class Property(
     @Expose val propertyType: String
 ) : Parcelable{
 
+    // get full address string
     fun getFullAddress() : String {
         return "Address: $number, $address, $region\nPostCode: $postcode"
     }
 
+    // get Price with format
     fun getPriceFormat() : String {
         return "Price: ${NumberFormat.getCurrencyInstance(getLocalFromISO("GBP")).format(price)}"
     }
 
+    // get BHK type
     fun getBHKType() : String {
         return "$bedrooms BHK"
     }
 
-
+    // Different color for different type
     fun getPropertyTypeColor() : Int
   {
     return when (propertyType) {
