@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="property"
+            type="com.dixitpatel.rightmovedemo.model.Property" />
+
+    </data>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/dimen_300dp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/dimen_4dp"
+            app:cardCornerRadius="@dimen/dimen_6dp"
+            app:cardElevation="@dimen/dimen_8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:id="@+id/ivCard"
+                android:layout_height="@dimen/dimen_180dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPropertyType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dimen_6dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center|bottom"
+                    android:lines="1"
+                    android:text="@{property.propertyType}"
+                    android:background="@drawable/rounded_white_transparent_background_top"
+                    android:backgroundTint="@{property.propertyTypeColor}"
+                    android:elevation="3dp"
+                    android:padding="@dimen/dimen_10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPropertyAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center|bottom"
+                    android:text="@{property.fullAddress}"
+                    android:padding="@dimen/dimen_8dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPropertyPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:text="@{property.priceFormat}"
+                    android:padding="@dimen/dimen_8dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_18sp"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPropertyAddress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPropertyBHK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="start"
+                    android:text="@{property.BHKType}"
+                    android:padding="@dimen/dimen_8dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp"
+                    app:layout_constraintHorizontal_weight="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvPropertyType"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+</layout>
+
