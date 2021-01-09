@@ -14,13 +14,12 @@ import java.text.NumberFormat
 import java.util.*
 
 
-enum class PropertyType(type: String)
+enum class PropertyType
 {
-   DETACHED("DETACHED"),
-   TERRACED("TERRACED"),
-   FLAT("FLAT"),
-   SEMI_DETACHED("SEMI_DETACHED");
-
+   DETACHED,
+   TERRACED,
+   FLAT,
+   SEMI_DETACHED;
 }
 
 /**
